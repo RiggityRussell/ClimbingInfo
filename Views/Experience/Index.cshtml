@@ -1,25 +1,25 @@
 ﻿@model IEnumerable<ClimbingInfo.Models.Experience>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Experience";
 }
 
-<h1>Index</h1>
+<h1 class="bg-info rounded">Experience</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table bg-info rounded">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.years)
+                Years Climbing
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.freq)
+                Frequency
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Members)
+                Members
             </th>
             <th></th>
         </tr>
