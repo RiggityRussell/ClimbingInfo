@@ -15,6 +15,7 @@ namespace ClimbingInfo.Models
         [StringLength(50,ErrorMessage ="Please enter how often you plan to climb.")]
         public string freq { get; set; }
         [Required]
+      /*  [Display(MembersID = "Members ID")]*/
         public int MembersID { get; set; }
         public Members Members { get; set; }
     }
