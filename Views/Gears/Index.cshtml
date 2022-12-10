@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ClimbingInfo.Models.Gear>
+
+@{
+    ViewData["Title"] = "Gear_Index";
+}
+
+<div class="bg-info rounded text-white row" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; padding: 10px;">
+    <h1 class="text-center border-primary col-sm-12">Gear Layout</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-outline-info bg-secondary text-white">Create New</a>
+    </p>
+    <table class="table bg-dark rounded table-bordered table-dark table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    Setup Name
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Shoes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Harness)
+                </th>
+                <th>
+                    Chalk Bag
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SetupName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Shoes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Harness)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Chalk_Bag)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.GearId" class="btn btn-sm btn-outline-info bg-secondary text-white">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.GearId" class="btn btn-sm btn-outline-info bg-secondary text-white">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.GearId" class="btn btn-sm btn-outline-info bg-secondary text-white">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,51 @@
+﻿@model ClimbingInfo.Models.Gear
+
+@{
+    ViewData["Title"] = "Edit_Gear";
+}
+<div class="bg-info rounded text-white" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; padding: 10px; width:80%">
+    <h1 class="text-center border-primary col-sm-12">Edit Your Gear Setup!</h1>
+
+    <h4>Gear</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="GearId" />
+                <div class="form-group">
+                    <label asp-for="SetupName" class="control-label">Setup Name</label>
+                    <input asp-for="SetupName" class="form-control" />
+                    <span asp-validation-for="SetupName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Shoes" class="control-label"></label>
+                    <input asp-for="Shoes" class="form-control" />
+                    <span asp-validation-for="Shoes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Harness" class="control-label"></label>
+                    <input asp-for="Harness" class="form-control" />
+                    <span asp-validation-for="Harness" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Chalk_Bag" class="control-label">Chalk Bag</label>
+                    <input asp-for="Chalk_Bag" class="form-control" />
+                    <span asp-validation-for="Chalk_Bag" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <i class="fa fa-solid fa-arrow-left"></i>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>

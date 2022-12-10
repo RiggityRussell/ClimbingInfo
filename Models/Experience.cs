@@ -8,15 +8,13 @@ namespace ClimbingInfo.Models
 {
     public class Experience
     {
-        public int ID { get; set; }
+        public int ExperienceId { get; set; }
+        [Required]
+        public string ExperienceName { get; set; }
         [Required]
         [Range(0,150, ErrorMessage="Enter years between 0-150.")]
         public int years { get; set; }
         [StringLength(50,ErrorMessage ="Please enter how often you plan to climb.")]
         public string freq { get; set; }
-        [Required]
-      /*  [Display(MembersID = "Members ID")]*/
-        public int MembersID { get; set; }
-        public Members Members { get; set; }
     }
 }

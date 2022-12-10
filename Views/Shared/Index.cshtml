@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ClimbingInfo.Models.Members>
+
+@{
+    ViewData["Title"] = "Members";
+}
+
+<div class="bg-dark">
+    <h1 class="text-center bg-info text-white border-info rounded" style="font-family:'Franklin Gothic Book'; text-shadow: 1px 1px black;">Members</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <div style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; font-size: large">
+        <table class="table bg-info text-white table-bordered table-dark table-hover table-sm table-responsive rounded">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.gender)
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Zip
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Cell
+                    </th>
+                    <th>
+                        Modifications
+                    </th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.city)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.state)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.zip)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cell)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

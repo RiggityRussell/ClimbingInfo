@@ -1,0 +1,45 @@
+﻿@model ClimbingInfo.Models.Experience
+
+@{
+    ViewData["Title"] = "Create_Experience";
+}
+<div class="bg-info rounded text-white" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; padding: 10px; width:80%">
+    <h1 class="text-center border-primary col-sm-12">Create Experience</h1>
+
+    <h4>Experience</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ExperienceName" class="control-label">Experience Name</label>
+                    <input asp-for="ExperienceName" class="form-control" />
+                    <span asp-validation-for="ExperienceName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="years" class="control-label">Years Climbing</label>
+                    <input asp-for="years" class="form-control" />
+                    <span asp-validation-for="years" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="freq" class="control-label">Frequency User Climbs</label>
+                    <input asp-for="freq" class="form-control" />
+                    <span asp-validation-for="freq" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <i class="fa fa-solid fa-arrow-left"></i>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>
