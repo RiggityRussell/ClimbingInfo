@@ -12,7 +12,7 @@ namespace ClimbingInfo.Models
         public int ID { get; set; }
         
         [Required]
-        [StringLength(30,ErrorMessage ="Please enter your full name using 30 characters or less.")]
+        [StringLength(15,ErrorMessage ="Please enter your full name using 30 characters or less.")]
         [Column("Name")]
         [Display(Name = "Name")]
         public string name { get; set; }
@@ -42,5 +42,14 @@ namespace ClimbingInfo.Models
         
         [ConcurrencyCheck]
         public string cell { get; set; }
+
+        public int ExperienceId { get; set; }
+        public Experience Experience { get; set; }
+
+        /*  [Display(MembersID = "Members ID")]*/
+        public int GearId { get; set; }
+        public Gear Gear { get; set; }
+
+
     }
 }

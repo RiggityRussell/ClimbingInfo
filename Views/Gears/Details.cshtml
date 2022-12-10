@@ -1,0 +1,51 @@
+﻿@model ClimbingInfo.Models.Gear
+
+@{
+    ViewData["Title"] = "Gear_Details";
+}
+@section head{
+    <style type="text/css">
+        dt {
+            text-align: right;
+        }
+    </style>
+}
+
+<div class="bg-info rounded text-white" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; padding: 10px;">
+    <h1 class="text-center border-primary col-sm-12">Gear Details</h1>
+    <div>
+        <h4>Gear</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Setup Name:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SetupName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Shoes):
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Shoes)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Harness):
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Harness)
+            </dd>
+            <dt class="col-sm-2">
+                Chalk Bag:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Chalk_Bag)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.GearId">Edit</a> |
+        <i class="fa fa-solid fa-arrow-left"></i>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

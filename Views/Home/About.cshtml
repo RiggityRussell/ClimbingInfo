@@ -1,12 +1,39 @@
 ﻿@{
 	ViewData["Title"] = "About Page";
 }
-<div class="container bg-dark">
-	<h1 class="text-center text-light">What kind of Climbing can I do?</h1>
-	<ul class="list-group">
-		<li class="list-group-item text-center bg-info display-4">Bouldering</li>
-		<li class="list-group-item text-center bg-info display-4">Top Rope</li>
-		<li class="list-group-item text-center bg-info display-4">Lead Rope</li>
-		<br />
-	</ul>
+<div class="container bg-dark text-white" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black;">
+    <h1 class="text-center text-light">What kind of Climbing can I do at the Climbing Club?</h1>
+    <ul class="list-group">
+        <button type="button" class="btn-block list-group-item text-center bg-info display-4" data-toggle="collapse" data-target="#Boulder">Bouldering</button>
+        <div id="Boulder" class="collapse text-center bg-info rounded text-white" style="padding:5px">
+            Bouldering is a form of free climbing that is performed on small rock formations or artificial rock walls without the use of ropes or harnesses.
+            While bouldering can be done without any equipment, most climbers use climbing shoes to help secure footholds, chalk to keep their hands dry and to provide a firmer grip,
+            and bouldering mats to prevent injuries from falls.
+        </div>
+        <button type="button" class="btn-block list-group-item text-center bg-info display-4" data-toggle="collapse" data-target="#TopRope">Tope Rope</button>
+        <div id="TopRope" class="collapse text-center bg-info rounded text-white" style="padding:5px">
+            Top rope climbing (or top roping) is a style in climbing in which the climber is securely attached to a rope which then passes up,
+            through an anchor system at the top of the climb, and down to a belayer at the foot of the climb. The belayer takes in slack rope throughout the climb,
+            so that if at any point the climber were to lose their hold, they would not fall more than a short distance.
+        </div>
+        <button type="button" class="btn-block list-group-item text-center bg-info display-4" data-toggle="collapse" data-target="#Lead">Lead</button>
+        <div id="Lead" class="collapse text-center bg-info rounded text-white" style="padding:5px">
+            Lead climbing is a climbing style, predominantly used in rock climbing. In a roped party one climber has to take the lead while the other climbers follow.
+            The lead climber wears a harness attached to a climbing rope, which in turn is connected to the other climbers below the lead climber. While ascending the route,
+            the lead climber periodically connects the rope to protection equipment for safety in the event of a fall. This protection can consist of permanent bolts, to which the climber clips quickdraws,
+            or removable protection such as nuts and cams. One of the climbers below the lead climber acts as a belayer. The belayer gives out rope while the lead climber ascends and also stops the rope when
+            the lead climber falls or wants to rest.
+        </div>
+        <br />
+    </ul>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+
+        <p>Information gathered from Wikipedia. <a href="https://en.wikipedia.org/wiki/Climbing">Climbing Wiki</a></p>
+
+    </div>
 </div>

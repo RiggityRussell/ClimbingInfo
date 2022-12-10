@@ -1,0 +1,46 @@
+﻿@model ClimbingInfo.Models.Experience
+
+@{
+    ViewData["Title"] = "Experience_Details";
+}
+@section head{
+    <style type="text/css">
+        dt {
+            text-align: right;
+        }
+    </style>
+}
+
+<div class="bg-info rounded text-white" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; padding: 10px;">
+    <h1 class="text-center border-primary col-sm-12">Experience</h1>
+
+    <div>
+        <h4>Experience</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Experience Name:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ExperienceName)
+            </dd>
+            <dt class="col-sm-2">
+                Years Climbing:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.years)
+            </dd>
+            <dt class="col-sm-2">
+                Frequency:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.freq)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ExperienceId">Edit</a> |
+        <i class="fa fa-solid fa-arrow-left"></i>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

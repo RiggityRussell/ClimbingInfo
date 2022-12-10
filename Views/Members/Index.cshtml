@@ -1,0 +1,103 @@
+﻿@*@model IEnumerable<ClimbingInfo.Models.Members>*@
+@model PaginatedList<ClimbingInfo.Models.Members>
+
+@{
+    ViewData["Title"] = "Members";
+}
+<div class="bg-info rounded text-white row" style="font-family: 'Franklin Gothic Book'; text-shadow: 1px 1px black; padding: 10px;">
+    <h1 class="text-center border-primary col-sm-12">Members</h1>
+    <br />
+    <p class="col-12">
+        <a asp-action="Create" class="btn btn-outline-info bg-secondary text-white">Create New</a>
+    </p>
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p style="padding-left:17px;">
+                Search: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-sm btn-outline-info bg-secondary text-white" style="margin-bottom:5px"/>
+            </p>
+        </div>
+    </form>
+    <table class="table bg-dark rounded table-bordered table-dark table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["MemSort"]">Name</a>@*asp-route-currentFilter="@ViewData["CurrentFilter"]"*@
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Cell
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.city)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.state)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.zip)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cell)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-sm btn-outline-info bg-secondary text-white">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-sm btn-outline-info bg-secondary text-white">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-sm btn-outline-info bg-secondary text-white">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-sm btn-outline-info bg-secondary text-white @prevDisabled" style="margin-top:5px">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-sm btn-outline-info bg-secondary text-white @nextDisabled" style="margin-top:5px">
+    Next
+</a>
